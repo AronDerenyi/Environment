@@ -4,5 +4,23 @@
 import PackageDescription
 
 let package = Package(
-    name: "Environment"
+    name: "Environment",
+    platforms: [
+        .iOS(.v13),
+        .macOS(.v10_15),
+        .tvOS(.v13),
+        .watchOS(.v6)
+    ],
+    products: [
+        .library(
+            name: "Swinject",
+            targets: ["Swinject"]
+        )
+    ],
+    targets: [
+        .target(
+            name: "Swinject",
+            path: "Sources"
+        )
+    ]
 )
