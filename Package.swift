@@ -13,13 +13,13 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Swinject",
-            targets: ["Swinject"]
+            name: "Environment",
+            targets: ["Environment"]
         )
     ],
     targets: [
         .target(
-            name: "Swinject",
+            name: "Environment",
             path: "Sources"
         )
     ]
