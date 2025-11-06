@@ -5,7 +5,7 @@ public extension View {
         _ keyPath: WritableKeyPath<EnvironmentValues, V>,
         _ factory: @escaping (EnvironmentValues) -> V
     ) -> some View {
-        modifier(FactoryModifier(
+        modifier(ValueFactoryModifier(
             keyPath: keyPath,
             factory: factory
         ))
@@ -29,7 +29,7 @@ public extension View {
     }
 }
 
-private struct FactoryModifier<V>: ViewModifier, Equatable {
+private struct ValueFactoryModifier<V>: ViewModifier, Equatable {
 
     @Environment(\.self) var environment
     let uuid = UUID()
